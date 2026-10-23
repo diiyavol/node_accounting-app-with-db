@@ -14,7 +14,7 @@ const Expense = sequelize.define(
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: { model: 'Users', key: 'id' },
+      references: { model: 'User', key: 'id' },
     },
     spentAt: {
       type: DataTypes.DATE,
@@ -36,7 +36,7 @@ const Expense = sequelize.define(
     },
   },
   {
-    tableName: 'Expense',
+    tableName: 'expense',
     updatedAt: false,
     createdAt: false,
   },

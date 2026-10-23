@@ -74,7 +74,9 @@ function createServer() {
   app.delete('/expenses/:id', async (req, res) => {
     const { id } = req.params;
 
-    if (id === -1) {
+    const expenseExists = await Expense.findByPk(id);
+
+    if (!expenseExists) {
       return res.status(404).send('Not found');
     }
 

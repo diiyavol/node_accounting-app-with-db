@@ -4,8 +4,6 @@
 
 const { createServer } = require('./createServer');
 
-createServer().then((app) => {
-  app.listen(5700, () => {
-    console.log('Server is running on localhost:5700');
-  });
+createServer().listen(5700, () => {
+  console.log('Server is running on localhost:5700');
 });
